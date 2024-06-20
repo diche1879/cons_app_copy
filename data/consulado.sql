@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 19-06-2024 a las 10:07:55
+-- Tiempo de generación: 20-06-2024 a las 11:59:02
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -37,6 +37,14 @@ CREATE TABLE `cita_dni_res` (
   `fecha_cita_res` datetime NOT NULL,
   `tipo_documento` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `cita_dni_res`
+--
+
+INSERT INTO `cita_dni_res` (`id_cita_res`, `id_residente`, `nombre_res`, `apellido_res`, `fecha_cita_res`, `tipo_documento`) VALUES
+(87, 3, 'Teofilo', 'Patini', '2024-07-15 09:00:00', 'DNI'),
+(88, 4, 'Oscar', 'Wilde', '2024-07-15 07:00:00', 'DNI');
 
 -- --------------------------------------------------------
 
@@ -92,7 +100,7 @@ CREATE TABLE `residentes_aire` (
   `fin_pasaporte_res` date NOT NULL,
   `email_res` varchar(15) NOT NULL,
   `password_res` varchar(10) NOT NULL,
-  `alerta` varchar(255) DEFAULT NULL
+  `alerta` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -100,8 +108,8 @@ CREATE TABLE `residentes_aire` (
 --
 
 INSERT INTO `residentes_aire` (`id_residente`, `consulado_pertenencia`, `nombre_res`, `apellido_res`, `telefono_res`, `ciudad_aire_res`, `num_dni_res`, `fin_dni_res`, `num_pasaporte_res`, `fin_pasaporte_res`, `email_res`, `password_res`, `alerta`) VALUES
-(3, 'Barcelona', 'Teofilo', 'Patini', '342561780', 'Barcelona', 't3452718p', '2024-09-15', 'E23456789', '2024-12-15', 'teo@gmail.com', '1234', ''),
-(4, 'Barcelona', 'Oscar', 'Wilde', '454647857', 'Tarragona', 'E7654321A', '2024-10-20', 'E7654321A', '2024-11-20', 'wilde@gmail.com', '5678', '');
+(3, 'Barcelona', 'Teofilo', 'Patini', '342561780', 'Barcelona', 't3452718p', '2024-09-15', 'E23456789', '2024-12-15', 'teo@gmail.com', '1234', 'Tu DNI caducará el 15/9/2024.'),
+(4, 'Barcelona', 'Oscar', 'Wilde', '454647857', 'Tarragona', 'E7654321A', '2024-09-15', 'E7654321A', '2024-11-20', 'wilde@gmail.com', '5678', 'Tu DNI caducará el 15/9/2024.');
 
 --
 -- Índices para tablas volcadas
@@ -139,7 +147,7 @@ ALTER TABLE `residentes_aire`
 -- AUTO_INCREMENT de la tabla `cita_dni_res`
 --
 ALTER TABLE `cita_dni_res`
-  MODIFY `id_cita_res` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_cita_res` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=89;
 
 --
 -- AUTO_INCREMENT de la tabla `cita_urgente`
