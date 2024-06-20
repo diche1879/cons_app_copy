@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 20-06-2024 a las 11:59:02
+-- Tiempo de generación: 20-06-2024 a las 22:01:33
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -35,16 +35,16 @@ CREATE TABLE `cita_dni_res` (
   `nombre_res` varchar(25) NOT NULL,
   `apellido_res` varchar(25) NOT NULL,
   `fecha_cita_res` datetime NOT NULL,
-  `tipo_documento` varchar(10) NOT NULL
+  `tipo_documento` varchar(10) NOT NULL,
+  `estado_cita` varchar(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `cita_dni_res`
 --
 
-INSERT INTO `cita_dni_res` (`id_cita_res`, `id_residente`, `nombre_res`, `apellido_res`, `fecha_cita_res`, `tipo_documento`) VALUES
-(87, 3, 'Teofilo', 'Patini', '2024-07-15 09:00:00', 'DNI'),
-(88, 4, 'Oscar', 'Wilde', '2024-07-15 07:00:00', 'DNI');
+INSERT INTO `cita_dni_res` (`id_cita_res`, `id_residente`, `nombre_res`, `apellido_res`, `fecha_cita_res`, `tipo_documento`, `estado_cita`) VALUES
+(87, 3, 'Teofilo', 'Patini', '2024-07-15 09:00:00', 'DNI', 'confirmada');
 
 -- --------------------------------------------------------
 
@@ -147,7 +147,7 @@ ALTER TABLE `residentes_aire`
 -- AUTO_INCREMENT de la tabla `cita_dni_res`
 --
 ALTER TABLE `cita_dni_res`
-  MODIFY `id_cita_res` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=89;
+  MODIFY `id_cita_res` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=91;
 
 --
 -- AUTO_INCREMENT de la tabla `cita_urgente`
